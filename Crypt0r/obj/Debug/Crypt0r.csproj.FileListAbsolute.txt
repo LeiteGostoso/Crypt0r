@@ -1,0 +1,10 @@
+C:\Users\USER\Desktop\Programação\Linguagens\Família C\C#\Ransom\Crypt0r\Crypt0r\bin\Debug\Crypt0r.dll
+C:\Users\USER\Desktop\Programação\Linguagens\Família C\C#\Ransom\Crypt0r\Crypt0r\bin\Debug\Crypt0r.pdb
+C:\Users\USER\Desktop\Programação\Linguagens\Família C\C#\Ransom\Crypt0r\Crypt0r\obj\Debug\Crypt0r.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\Programação\Linguagens\Família C\C#\Ransom\Crypt0r\Crypt0r\obj\Debug\Crypt0r.dll
+C:\Users\USER\Desktop\Programação\Linguagens\Família C\C#\Ransom\Crypt0r\Crypt0r\obj\Debug\Crypt0r.pdb
+C:\Users\USER\Documents\GitHub\Crypt0r\Crypt0r\bin\Debug\Crypt0r.dll
+C:\Users\USER\Documents\GitHub\Crypt0r\Crypt0r\bin\Debug\Crypt0r.pdb
+C:\Users\USER\Documents\GitHub\Crypt0r\Crypt0r\obj\Debug\Crypt0r.csprojResolveAssemblyReference.cache
+C:\Users\USER\Documents\GitHub\Crypt0r\Crypt0r\obj\Debug\Crypt0r.dll
+C:\Users\USER\Documents\GitHub\Crypt0r\Crypt0r\obj\Debug\Crypt0r.pdb
