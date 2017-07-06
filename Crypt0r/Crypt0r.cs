@@ -53,8 +53,8 @@ namespace Crypt0r
 
         public Crypt0rV3()
         {
-            GenerateKey();
-            GenerateIV();
+            Key = GenerateKey();
+            IV = GenerateIV();
         }
 
         public void SetInRegistry()
@@ -83,7 +83,7 @@ namespace Crypt0r
             else throw new Exception("Failed to destroy.");
         }
 
-        public void GenerateKey()
+        public static string GenerateKey()
         {
             Random r = new Random();
             List<int> PossibleChars = new List<int>();
@@ -102,7 +102,7 @@ namespace Crypt0r
             this.Key = Key;
         }
 
-        public void GenerateIV()
+        public static string GenerateIV()
         {
             Random r = new Random();
             List<int> PossibleChars = new List<int>();
@@ -119,40 +119,6 @@ namespace Crypt0r
                 IV += (char)PossibleChars[randomIndex];
             }
             this.IV = IV;
-        }
-
-        public string Encode(string textToEncode)
-        {
-            byte[] plaintextbytes = Encoding.Unicode.GetBytes(textToEncode);
-            AesCryptoServiceProvider aes = new AesCryptoServiceProvider {
-                BlockSize = 128,
-                KeySize = 256,
-                Key = Encoding.UTF8.GetBytes(Key),
-                IV = Encoding.UTF8.GetBytes(IV),
-                Padding = PaddingMode.PKCS7,
-                Mode = CipherMode.CBC
-            };
-            ICryptoTransform crypto = aes.CreateEncryptor(aes.Key, aes.IV);
-            byte[] encrypted = crypto.TransformFinalBlock(plaintextbytes, 0, plaintextbytes.Length);
-            crypto.Dispose();
-            return Convert.ToBase64String(encrypted);
-        }
-
-        public string Decode(string encryptedText)
-        {
-            byte[] encryptedbytes = Convert.FromBase64String(encryptedText);
-            AesCryptoServiceProvider aes = new AesCryptoServiceProvider {
-                BlockSize = 128,
-                KeySize = 256,
-                Key = Encoding.UTF8.GetBytes(Key),
-                IV = Encoding.UTF8.GetBytes(IV),
-                Padding = PaddingMode.PKCS7,
-                Mode = CipherMode.CBC
-            };
-            ICryptoTransform crypto = aes.CreateDecryptor(aes.Key, aes.IV);
-            byte[] secret = crypto.TransformFinalBlock(encryptedbytes, 0, encryptedbytes.Length);
-            crypto.Dispose();
-            return Encoding.Unicode.GetString(secret);
         }
 
         public byte[] EncodeBytes(byte[] bytesToEncode)
